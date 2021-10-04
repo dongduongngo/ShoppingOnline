@@ -23,11 +23,14 @@ public class AuthConfig extends WebSecurityConfigurerAdapter {
 //    @Autowired
 //    private JwtRequestFilter jwtRequestFilter;
 
-    @Autowired
-    private JwtUserDetailService userDetailService;
+    private final JwtUserDetailService userDetailService;
 
-    @Autowired
-    private JwtRequestFilter jwtRequestFilter;
+    private final JwtRequestFilter jwtRequestFilter;
+
+    public AuthConfig(JwtUserDetailService userDetailService, JwtRequestFilter jwtRequestFilter) {
+        this.userDetailService = userDetailService;
+        this.jwtRequestFilter = jwtRequestFilter;
+    }
     /*JWT step*/
 
 
