@@ -26,5 +26,5 @@ public class JwtUserDetailServiceImpl implements JwtUserDetailService {
         }
         return new ShoppingUsersDetail(usersByAccount);
     }
-    int i = 1; //test
+
 }
