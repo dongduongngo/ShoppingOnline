@@ -7,6 +7,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class ShoppingOnlineApplication {
 
     public static void main(String[] args) {
+        System.out.println("a");
         SpringApplication.run(ShoppingOnlineApplication.class, args);
     }
 
