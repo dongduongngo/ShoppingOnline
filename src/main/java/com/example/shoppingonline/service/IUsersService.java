@@ -7,9 +7,13 @@ import org.springframework.security.core.userdetails.User;
 import java.util.List;
 
 public interface IUsersService {
-    List<Users> getAllUsers();
+//    List<Users> getAllUsers();
     List<UserDto> getAllUserDtos();
 
     Users create(Users users);
     UserDto update(UserDto userDto);
+
+    UserDto findOne(Long id);
+
+    void delete(Long id);
 }
