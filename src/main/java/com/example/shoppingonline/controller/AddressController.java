@@ -25,6 +25,11 @@ public class AddressController {
         return addressService.getAllAddressDto();
     }
 
+    //get 1 address
+    @GetMapping("/{findId}")
+    public AddressDto findOne(@PathVariable Long findId){
+        return addressService.findOne(findId);
+    }
     //add
     @PostMapping("/add")
     public AddressDto create(@RequestBody AddressDto addressDto){
