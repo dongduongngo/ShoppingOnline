@@ -13,12 +13,12 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 @Service
-public class CategoryImpl implements ICategoryService {
+public class CategoryServiceImpl implements ICategoryService {
 
     private final ICategoryRepository categoryRepository;
     private final ModelMapper modelMapper;
 
-    public CategoryImpl(ICategoryRepository categoryRepository, ModelMapper modelMapper) {
+    public CategoryServiceImpl(ICategoryRepository categoryRepository, ModelMapper modelMapper) {
         this.categoryRepository = categoryRepository;
         this.modelMapper = modelMapper;
     }

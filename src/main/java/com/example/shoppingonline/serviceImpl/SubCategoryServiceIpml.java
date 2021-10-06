@@ -12,13 +12,13 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 @Service
-public class SubCategoryIpml implements ISubCategoryService {
+public class SubCategoryServiceIpml implements ISubCategoryService {
 
     private final ISubCategoryRepository categoryRepository;
     private final
     ModelMapper modelMapper;
 
-    public SubCategoryIpml(ISubCategoryRepository categoryRepository, ModelMapper modelMapper) {
+    public SubCategoryServiceIpml(ISubCategoryRepository categoryRepository, ModelMapper modelMapper) {
         this.categoryRepository = categoryRepository;
         this.modelMapper = modelMapper;
     }
