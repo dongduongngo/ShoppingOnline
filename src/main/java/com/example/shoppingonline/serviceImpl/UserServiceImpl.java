@@ -1,12 +1,13 @@
 package com.example.shoppingonline.serviceImpl;
 
 import com.example.shoppingonline.DTO.UserDto;
+import com.example.shoppingonline.entity.Address;
 import com.example.shoppingonline.entity.Users;
 import com.example.shoppingonline.repository.IUsersRepository;
 import com.example.shoppingonline.service.IUsersService;
 import org.modelmapper.ModelMapper;
-import org.springframework.security.core.userdetails.User;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 import java.util.stream.Collectors;
@@ -25,9 +26,12 @@ public class UserServiceImpl implements IUsersService {
         this.modelMapper = modelMapper;
     }
 
+
     @Override
-    public List<UserDto> getAllUserDtos() {
-        return ((List<User>) usersRepository
+    @Transactional
+    public List<UserDto> getAllUserDtos()
+    {
+        return ((List<Users>) usersRepository
                 .findAll())
                 .stream()
                 .map(this::convertToUserDto)
@@ -35,23 +39,29 @@ public class UserServiceImpl implements IUsersService {
     }
 
     @Override
-    public Users create(Users users) {
-        return null;
+    public Users create(Users users)
+    {
+        users.setUserId(null);
+        Users usersAdded = usersRepository.save(users);
+        return usersAdded;
     }
 
     @Override
-    public UserDto update(UserDto userDto) {
-        return null;
+    public UserDto update(UserDto userDto)
+    {
+        Users users = usersRepository.save(convertToUser(userDto));
+        return convertToUserDto(users);
     }
 
     @Override
-    public UserDto findOne(Long id) {
-        return null;
+    public UserDto findOne(Long id)
+    {
+        return convertToUserDto(usersRepository.getById(id));
     }
 
     @Override
     public void delete(Long id) {
-
+        usersRepository.deleteById(id);
     }
 
     private UserDto convertToUserDto(Users users){
