@@ -5,7 +5,7 @@ import lombok.Data;
 @Data
 public class AddressDto {
     private Long addressId;
-    private ViewUserDto userDto;
+    private ViewUserDto user;
     private String name;
     private String address;
     private int priority;
