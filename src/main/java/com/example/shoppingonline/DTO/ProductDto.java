@@ -8,7 +8,7 @@ public class ProductDto {
     private Long categoryId;
     private Long subCategoryId;
     private String title;
-    private String desciption;
+    private String description;
     private double price;
     private int quanity;
     private long userId;
