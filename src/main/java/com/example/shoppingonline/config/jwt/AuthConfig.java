@@ -63,6 +63,12 @@ public class AuthConfig extends WebSecurityConfigurerAdapter {
                 .authorizeRequests()
                 .antMatchers("/address/**").permitAll()
                 .antMatchers("/users").permitAll()
+                .antMatchers("/category").permitAll()
+                .antMatchers("/subcategory").permitAll()
+                .antMatchers("/images").permitAll()
+                .antMatchers("/orderdetail").permitAll()
+                .antMatchers("/order").permitAll()
+                .antMatchers("/product").permitAll()
                 .antMatchers("/login").permitAll()
                 .anyRequest().authenticated()
 //                .and().httpBasic();
