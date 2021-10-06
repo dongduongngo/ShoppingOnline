@@ -54,6 +54,7 @@ public class CategoryImpl implements ICategoryService {
     public void delete(Long id) {
         categoryRepository.deleteById(id);
     }
+
     private CategoryDto convertToCategoryDto(Category category){
         CategoryDto categoryDto = modelMapper.map(category, CategoryDto.class);
         return categoryDto;
